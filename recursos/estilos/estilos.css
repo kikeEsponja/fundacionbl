@@ -294,11 +294,12 @@ button {
   justify-content: center;
   align-items: center;
   height: auto;
+  flex-wrap: wrap;
 }
 .item_nosotros{
   margin: 1%;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  width: 33%;
+  width: 250px;
   height: 450px;
 }
 
@@ -386,12 +387,48 @@ footer > div{
   display: flex;
   justify-content: space-around;
 }
+/* MEDIA QUERIES */
+@media (min-width: 1025px) {
+  .galeria-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (min-width: 769px) and (max-width: 1024px) {
+  .navbar {
+    padding: 0.75rem 2rem;
+  }
 
-@media (max-width: 320px) {
+  .navbar-links .btn {
+    min-width: 130px;
+    line-height: 1.2;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .hero h1 {
+    font-size: 3.1rem;
+  }
+
+  .hero p {
+    font-size: 1.35rem;
+  }
+
+  .galeria h2 {
+    font-size: 1.9rem;
+  }
+
+  .galeria-descripcion {
+    font-size: 1.05rem;
+  }
+}
+
+@media (min-width: 426px) and (max-width: 768px) {
   .navbar {
     flex-direction: row;
     gap: 0.75rem;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.5rem;
     position: relative;
   }
 
@@ -407,7 +444,7 @@ footer > div{
     left: 0;
     right: 0;
     background: var(--azul-confianza);
-    padding: 0.75rem 1rem 1rem;
+    padding: 0.75rem 1.5rem 1rem;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -426,44 +463,101 @@ footer > div{
 
   .navbar-links .btn {
     width: 100%;
-    max-width: 260px;
-    font-size: 0.95rem;
-    padding: 6px 10px;
+    max-width: 360px;
     line-height: 1.1;
   }
 
-  .logo {
-    max-height: 44px;
-    width: auto;
-    margin-left: 0.5rem;
-  }
-
   .hero h1 {
-    font-size: 2.2rem;
+    font-size: 2.8rem;
   }
 
   .hero p {
-    font-size: 1.1rem;
-  }
-
-  .galeria {
-    padding: 1.5rem 1rem;
-  }
-
-  .galeria h2 {
-    font-size: 1.4rem;
-  }
-
-  .galeria-descripcion {
-    font-size: 0.95rem;
+    font-size: 1.3rem;
   }
 
   .galeria-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
   }
 
-  .galeria-item {
-    max-width: 100%;
+  .galeria h2 {
+    font-size: 1.7rem;
+  }
+
+  .galeria-descripcion {
+    font-size: 1.05rem;
+  }
+  .contenedor_footer_div{
+    display: flex;
+    flex-direction: column;
+  }
+  .footer_div{
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
+    margin: 0.5%;
+    text-align: center;
+  }
+}
+
+@media (min-width: 376px) and (max-width: 425px) {
+  .navbar {
+    flex-direction: row;
+    gap: 0.75rem;
+    padding: 0.75rem 1.25rem;
+    position: relative;
+  }
+
+  .navbar-toggle {
+    display: flex;
+  }
+
+  .navbar-links {
+    flex-direction: column;
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--azul-confianza);
+    padding: 0.75rem 1.25rem 1rem;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+
+  .navbar-links.is-open {
+    display: flex;
+    max-height: 400px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .navbar-links .btn {
+    width: 100%;
+    max-width: 320px;
+    line-height: 1.1;
+  }
+
+  .hero h1 {
+    font-size: 2.6rem;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+  }
+
+  .galeria-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .galeria h2 {
+    font-size: 1.6rem;
+  }
+
+  .galeria-descripcion {
+    font-size: 1rem;
   }
 }
 
@@ -543,11 +637,11 @@ footer > div{
   }
 }
 
-@media (min-width: 376px) and (max-width: 425px) {
+@media (max-width: 320px) {
   .navbar {
     flex-direction: row;
     gap: 0.75rem;
-    padding: 0.75rem 1.25rem;
+    padding: 0.75rem 1rem;
     position: relative;
   }
 
@@ -563,7 +657,7 @@ footer > div{
     left: 0;
     right: 0;
     background: var(--azul-confianza);
-    padding: 0.75rem 1.25rem 1rem;
+    padding: 0.75rem 1rem 1rem;
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -582,128 +676,43 @@ footer > div{
 
   .navbar-links .btn {
     width: 100%;
-    max-width: 320px;
+    max-width: 260px;
+    font-size: 0.95rem;
+    padding: 6px 10px;
     line-height: 1.1;
   }
 
-  .hero h1 {
-    font-size: 2.6rem;
-  }
-
-  .hero p {
-    font-size: 1.25rem;
-  }
-
-  .galeria-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .galeria h2 {
-    font-size: 1.6rem;
-  }
-
-  .galeria-descripcion {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 426px) and (max-width: 768px) {
-  .navbar {
-    flex-direction: row;
-    gap: 0.75rem;
-    padding: 0.75rem 1.5rem;
-    position: relative;
-  }
-
-  .navbar-toggle {
-    display: flex;
-  }
-
-  .navbar-links {
-    flex-direction: column;
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: var(--azul-confianza);
-    padding: 0.75rem 1.5rem 1rem;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    pointer-events: none;
-    transform: translateY(-8px);
-    transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-  }
-
-  .navbar-links.is-open {
-    display: flex;
-    max-height: 400px;
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-  }
-
-  .navbar-links .btn {
-    width: 100%;
-    max-width: 360px;
-    line-height: 1.1;
+  .logo {
+    max-height: 44px;
+    width: auto;
+    margin-left: 0.5rem;
   }
 
   .hero h1 {
-    font-size: 2.8rem;
+    font-size: 2.2rem;
   }
 
   .hero p {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
   }
 
-  .galeria-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .galeria h2 {
-    font-size: 1.7rem;
-  }
-
-  .galeria-descripcion {
-    font-size: 1.05rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1024px) {
-  .navbar {
-    padding: 0.75rem 2rem;
-  }
-
-  .navbar-links .btn {
-    min-width: 130px;
-    line-height: 1.2;
-  }
-
-  .galeria-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .hero h1 {
-    font-size: 3.1rem;
-  }
-
-  .hero p {
-    font-size: 1.35rem;
+  .galeria {
+    padding: 1.5rem 1rem;
   }
 
   .galeria h2 {
-    font-size: 1.9rem;
+    font-size: 1.4rem;
   }
 
   .galeria-descripcion {
-    font-size: 1.05rem;
+    font-size: 0.95rem;
   }
-}
 
-@media (min-width: 1025px) {
   .galeria-grid {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr;
+  }
+
+  .galeria-item {
+    max-width: 100%;
   }
 }
