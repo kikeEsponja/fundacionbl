@@ -559,6 +559,10 @@ footer > div{
   .galeria-descripcion {
     font-size: 1rem;
   }
+  .contenedor_footer_div{
+    display: flex;
+    flex-direction: column;
+  }
   .footer_div{
     box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
     margin: 0.5%;
@@ -639,6 +643,10 @@ footer > div{
 
   .galeria-grid {
     grid-template-columns: 1fr;
+  }
+  .contenedor_footer_div{
+    display: flex;
+    flex-direction: column;
   }
   .footer_div{
     box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
@@ -724,6 +732,10 @@ footer > div{
 
   .galeria-item {
     max-width: 100%;
+  }
+  .contenedor_footer_div{
+    display: flex;
+    flex-direction: column;
   }
   .footer_div{
     box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
