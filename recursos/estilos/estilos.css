@@ -559,6 +559,11 @@ footer > div{
   .galeria-descripcion {
     font-size: 1rem;
   }
+  .footer_div{
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
+    margin: 0.5%;
+    text-align: center;
+  }
 }
 
 @media (min-width: 321px) and (max-width: 375px) {
@@ -634,6 +639,11 @@ footer > div{
 
   .galeria-grid {
     grid-template-columns: 1fr;
+  }
+  .footer_div{
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
+    margin: 0.5%;
+    text-align: center;
   }
 }
 
@@ -714,5 +724,10 @@ footer > div{
 
   .galeria-item {
     max-width: 100%;
+  }
+  .footer_div{
+    box-shadow: 0 4px 10px rgb(0, 0, 0, 0.1);
+    margin: 0.5%;
+    text-align: center;
   }
 }
